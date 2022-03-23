@@ -1,0 +1,628 @@
+{include file="public/head" /} {include file="public/top" /}
+<input type="hidden" id="nowhtml" value="navSystem" class="navSystem3">
+<style type="text/css">
+    .page_content {
+        margin-top: 10px;
+        background-color: #F1F4F5;
+    }
+    
+    .pages_box {
+        width: 500px;
+        height: 196px;
+        border: 1px solid #eeeeee;
+        display: inline-block;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        margin-right: 4px;
+    }
+    
+    .pages_box:nth-child(3n+3) {
+        margin-right: 0;
+    }
+    
+    .pages_box_top {
+        background: #f1feff;
+        height: 52px;
+        line-height: 52px;
+        padding: 0 20px 0 30px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .pages_box_top .iconlianjie {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(67, 133, 255, 0.1);
+        line-height: 32px;
+        text-align: center;
+        color: #4385ff;
+    }
+    
+    .pages_box_bottom {
+        background: #ffffff;
+        height: 144px;
+        padding: 30px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    
+    .write_num {
+        position: absolute;
+        bottom: 36px;
+    }
+    
+    .write_num input {
+        margin: 0;
+        width: 380px;
+        height: 33px;
+        border: 1px solid #dfe4e7;
+        box-shadow: none;
+    }
+    
+    .write_num input::-webkit-input-placeholder {
+        color: #c7cddb;
+    }
+</style>
+
+<div>
+    <div class="pages_box">
+        <div class="pages_box_top">商城首页
+            <div id="0" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/index/index</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">个人中心
+            <div id="1" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText"> /pages/usercenter/usercenter</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">店内支付
+            <div id="2" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/PagesA/shoppay/shoppay</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">优惠券页面
+            <div id="3" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/coupon/coupon</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">我的优惠券
+            <div id="4" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/mycoupon/mycoupon</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">多门店列表
+            <div id="5" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/PagesA/store/store</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">充值
+            <div id="6" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/recharge/recharge</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">分销申请页
+            <div id="7" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesFenxiao/fenxiao_apply/fenxiao_apply</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">分销中心
+            <div id="8" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesFenxiao/fenxiao_center/fenxiao_center</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">开通会员卡
+            <div id="9" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/PagesA/register/register</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">会员权益页
+            <div id="10" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/PagesA/equity_show/equity_show</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">会员等级页
+            <div id="11" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/PagesA/open1/open1</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">图文栏目
+            <div id="12" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont1">/pages/listPic/listPic</span>
+            <div class="write_num">参数：<input type="text" id="putcont1" placeholder="请填写栏目ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单篇文章
+            <div id="13" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont2">/pages/showArt/showArt</span>
+            <div class="write_num">参数：<input type="text" id="putcont2" placeholder="请填写在文章列表中相关文章的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单篇组图
+            <div id="14" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont3">/pages/showPic/showPic</span>
+            <div class="write_num">参数：<input type="text" id="putcont3" placeholder="请填写在组图列表中相关组图的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">购物车
+            <div id="15" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/gwc/gwc</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">全部多规格商品
+            <div id="16" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/listAllPro/listAllPro?type=showProMore</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">多规格商品栏目
+            <div id="17" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont4">/PagesA/catelist/catelist?type=showProMore</span>
+            <div class="write_num">参数：<input type="text" id="putcont4" placeholder="请填写在商品栏目中相关栏目的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个多规格商品
+            <div id="18" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont5">/pages/showProMore/showProMore</span>
+            <div class="write_num">参数：<input type="text" id="putcont5" placeholder="请填写在商品列表中相关商品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">名片列表
+            <div id="19" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesCards/card_list/card_list</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个名片
+            <div id="20" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont6">/pagesCards/card_info/card_info</span>
+            <div class="write_num">参数：<input type="text" id="putcont6" placeholder="请填写在名片列表中相关名片的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">全部秒杀商品列表
+            <div id="21" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/listAllPro/listAllPro?type=showPro</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">秒杀商品列表
+            <div id="22" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont7">/PagesA/catelist/catelist?type=flashSale</span>
+            <div class="write_num">参数：<input type="text" id="putcont7" placeholder="请填写在商品栏目中相关栏目的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个秒杀商品
+            <div id="23" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont8">/pagesFlashSale/showPro/showPro</span>
+            <div class="write_num">参数：<input type="text" id="putcont8" placeholder="请填写在商品列表中相关商品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">全部预约预定商品列表
+            <div id="24" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pages/listAllPro/listAllPro?type=reserve</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">预约商品列表
+            <div id="25" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont9">/PagesA/catelist/catelist?type=reserve</span>
+            <div class="write_num">参数：<input type="text" id="putcont9" placeholder="请填写在商品栏目中相关栏目的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个预约商品
+            <div id="26" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont10">/pagesReserve/proDetail/proDetail</span>
+            <div class="write_num">参数：<input type="text" id="putcont10" placeholder="请填写在商品列表中相关商品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">拼团首页
+            <div id="27" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPt/index/index</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个拼团商品
+            <div id="28" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont11">/pagesPt/products/products</span>
+            <div class="write_num">参数：<input type="text" id="putcont11" placeholder="请填写在商品列表中相关商品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">拼团订单页
+            <div id="29" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPt/orderlist/orderlist</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">所有商户列表
+            <div id="30" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginShop/list/list</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">商户分类列表
+            <div id="54" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginShop/list/list</span>
+            <div class="write_num">参数：<input type="text" id="putcont19" placeholder="请填写在商家分类中相关分类ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">商家店铺
+            <div id="31" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont12">/pagesPluginShop/shop/shop</span>
+            <div class="write_num">参数：<input type="text" id="putcont12" placeholder="请填写在商家列表中相关店铺的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">商家产品
+            <div id="32" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont13">/pagesPluginShop/goods_detail/goods_detail</span>
+            <div class="write_num">参数：<input type="text" id="putcont13" placeholder="请填写在商家产品中相关产品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">入驻页面
+            <div id="33" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginShop/register/register</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">点餐首页
+            <div id="34" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesFood/food/food</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">签到首页
+            <div id="35" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesSign/index/index</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">最新签到
+            <div id="36" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesSign/new/new</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">签到排行
+            <div id="37" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesSign/ranking/ranking</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">积分商城首页
+            <div id="38" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesExchange/list/list</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">积分商城产品页
+            <div id="39" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont14">/pagesExchange/show/show</span>
+            <div class="write_num">参数：<input type="text" id="putcont14" placeholder="请填写在积分商城中相关产品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">积分商城订单页
+            <div id="40" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesExchange/order/order</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">微同城首页
+            <div id="41" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginForum/index/index</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">微同城列表页
+            <div id="42" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginForum/forum/forum?fid=1</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">微同城发布页
+            <div id="43" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginForum/release/release</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">已发布/收藏列表
+            <div id="44" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginForum/collect/collect</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">供求关系列表页
+            <div id="45" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginSupply/supply/supply</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">供求关系发布页
+            <div id="46" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginSupply/release/release</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">已发布/收藏列表
+            <div id="47" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesPluginSupply/collect/collect</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">抽奖活动
+            <div id="48" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont15">/pagesShake/index/index</span>
+            <div class="write_num">参数：<input type="text" id="putcont15" placeholder="请填写在抽奖活动中相关活动的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">砍价首页
+            <div id="49" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesBargain/bargain/bargain</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个砍价商品
+            <div id="50" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont16">/pagesBargain/bargain_pro/bargain_pro</span>
+            <div class="write_num">参数：<input type="text" id="putcont16" placeholder="请填写在砍价商品中相关商品的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">活动首页
+            <div id="51" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText">/pagesActive/index/index</span></div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">单个活动
+            <div id="52" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont17">/pagesActive/active_info/active_info</span>
+            <div class="write_num">参数：<input type="text" id="putcont17" placeholder="请填写在抽奖活动中相关活动的ID"></div>
+        </div>
+    </div>
+    <div class="pages_box">
+        <div class="pages_box_top">多商户商家PC后台
+            <div id="53" onclick="mmcopy(this)" class="iconfont iconlianjie"><img src="/image/fzhi.png"></div>
+        </div>
+        <div class="pages_box_bottom">路径：<span class="copyText" id="divcont18">http://你的域名/index/login/bizlogin</span>
+            <div class="write_num">参数：<input type="text" id="putcont18" placeholder="请填写你的域名"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function mmcopy(e) {
+        var i = 0;
+        i = e.id
+        var txt = '';
+        var txtArr = document.getElementsByClassName('copyText');
+        txt = txtArr[i].innerHTML
+        const input = document.createElement("input"); // 创建一个新input标签
+        input.setAttribute("readonly", "readonly"); // 设置input标签只读属性
+        input.setAttribute("value", txt); // 设置input value值为需要复制的内容
+        document.body.appendChild(input); // 添加input标签到页面
+        input.select(); // 选中input内容
+        input.setSelectionRange(0, 9999); // 设置选中input内容范围
+        document.execCommand("copy"); // 复制
+        document.body.removeChild(input); // 删除新创建的input标签
+        alert('复制成功')
+    }
+
+    function change() {
+        var put1 = document.getElementById("putcont1");
+        var div1 = document.getElementById("divcont1");
+        put1.onkeyup = function() {
+            if (put1.value != '') {
+                div1.innerText = '/pages/listPic/listPic?cid=' + put1.value;
+            } else {
+                div1.innerText = '/pages/listPic/listPic'
+            }
+        }
+        var put2 = document.getElementById("putcont2");
+        var div2 = document.getElementById("divcont2");
+        put2.onkeyup = function() {
+            if (put2.value != '') {
+                div2.innerText = '/pages/showArt/showArt?id=' + put2.value;
+            } else {
+                div2.innerText = '/pages/showArt/showArt'
+            }
+        }
+        var put3 = document.getElementById("putcont3");
+        var div3 = document.getElementById("divcont3");
+        put3.onkeyup = function() {
+            if (put3.value != '') {
+                div3.innerText = '/pages/showPic/showPic?id=' + put3.value;
+            } else {
+                div3.innerText = '/pages/showPic/showPic'
+            }
+        }
+        var put4 = document.getElementById("putcont4");
+        var div4 = document.getElementById("divcont4");
+        put4.onkeyup = function() {
+            if (put4.value != '') {
+                div4.innerText = '/PagesA/catelist/catelist?type=showProMore&cid=' + put4.value;
+            } else {
+                div4.innerText = '/PagesA/catelist/catelist?type=showProMore'
+            }
+        }
+        var put5 = document.getElementById("putcont5");
+        var div5 = document.getElementById("divcont5");
+        put5.onkeyup = function() {
+            if (put5.value != '') {
+                div5.innerText = '/pages/showProMore/showProMore?id=' + put5.value;
+            } else {
+                div5.innerText = '/pages/showProMore/showProMore'
+            }
+        }
+        var put6 = document.getElementById("putcont6");
+        var div6 = document.getElementById("divcont6");
+        put6.onkeyup = function() {
+            if (put6.value != '') {
+                div6.innerText = '/pagesCards/card_info/card_info?id=' + put6.value;
+            } else {
+                div6.innerText = '/pagesCards/card_info/card_info'
+            }
+        }
+        var put7 = document.getElementById("putcont7");
+        var div7 = document.getElementById("divcont7");
+        put7.onkeyup = function() {
+            if (put7.value != '') {
+                div7.innerText = '/PagesA/catelist/catelist?type=flashSale&cid=' + put7.value;
+            } else {
+                div7.innerText = '/PagesA/catelist/catelist?type=flashSale'
+            }
+        }
+        var put8 = document.getElementById("putcont8");
+        var div8 = document.getElementById("divcont8");
+        put8.onkeyup = function() {
+            if (put8.value != '') {
+                div8.innerText = '/pagesFlashSale/showPro/showPro?id=' + put8.value;
+            } else {
+                div8.innerText = '/pagesFlashSale/showPro/showPro'
+            }
+        }
+        var put9 = document.getElementById("putcont9");
+        var div9 = document.getElementById("divcont9");
+        put9.onkeyup = function() {
+            if (put9.value != '') {
+                div9.innerText = '/PagesA/catelist/catelist?type=reserve&cid=' + put9.value;
+            } else {
+                div9.innerText = '/PagesA/catelist/catelist?type=reserve'
+            }
+        }
+        var put10 = document.getElementById("putcont10");
+        var div10 = document.getElementById("divcont10");
+        put10.onkeyup = function() {
+            if (put10.value != '') {
+                div10.innerText = '/pagesReserve/proDetail/proDetail?id=' + put10.value;
+            } else {
+                div10.innerText = '/pagesReserve/proDetail/proDetail'
+            }
+        }
+        var put11 = document.getElementById("putcont11");
+        var div11 = document.getElementById("divcont11");
+        put11.onkeyup = function() {
+            if (put11.value != '') {
+                div11.innerText = '/pagesPt/products/products?id=' + put11.value;
+            } else {
+                div11.innerText = '/pagesPt/products/products'
+            }
+        }
+        var put12 = document.getElementById("putcont12");
+        var div12 = document.getElementById("divcont12");
+        put12.onkeyup = function() {
+            if (put12.value != '') {
+                div12.innerText = '/pagesPluginShop/shop/shop?cid=' + put12.value;
+            } else {
+                div12.innerText = '/pagesPluginShop/shop/shop'
+            }
+        }
+        var put13 = document.getElementById("putcont13");
+        var div13 = document.getElementById("divcont13");
+        put13.onkeyup = function() {
+            if (put13.value != '') {
+                div13.innerText = '/pagesPluginShop/goods_detail/goods_detail?id=' + put13.value;
+            } else {
+                div13.innerText = '/pagesPluginShop/goods_detail/goods_detail'
+            }
+        }
+        var put14 = document.getElementById("putcont14");
+        var div14 = document.getElementById("divcont14");
+        put14.onkeyup = function() {
+            if (put14.value != '') {
+                div14.innerText = '/pagesExchange/show/show?id=' + put14.value;
+            } else {
+                div14.innerText = '/pagesExchange/show/show'
+            }
+        }
+        var put15 = document.getElementById("putcont15");
+        var div15 = document.getElementById("divcont15");
+        put15.onkeyup = function() {
+            if (put15.value != '') {
+                div15.innerText = '/pagesShake/index/index?id=' + put15.value;
+            } else {
+                div15.innerText = '/pagesShake/index/index'
+            }
+        }
+        var put16 = document.getElementById("putcont16");
+        var div16 = document.getElementById("divcont16");
+        put16.onkeyup = function() {
+            if (put16.value != '') {
+                div16.innerText = '/pagesBargain/bargain_pro/bargain_pro?id=' + put16.value;
+            } else {
+                div16.innerText = '/pagesBargain/bargain_pro/bargain_pro'
+            }
+        }
+        var put17 = document.getElementById("putcont17");
+        var div17 = document.getElementById("divcont17");
+        put17.onkeyup = function() {
+            if (put17.value != '') {
+                div17.innerText = '/pagesActive/active_info/active_info?aid=' + put17.value;
+            } else {
+                div17.innerText = '/pagesActive/active_info/active_info'
+            }
+        }
+        var put18 = document.getElementById("putcont18");
+        var div18 = document.getElementById("divcont18");
+        put18.onkeyup = function() {
+            if (put18.value != '') {
+                div18.innerText = 'http://' + put18.value + '/index/login/bizlogin';
+            } else {
+                div18.innerText = 'http://你的域名/index/login/bizlogin'
+            }
+        }
+    }
+    change();
+</script>
+
+{include file="public/foot_more" /}

@@ -1,0 +1,93 @@
+{include file="public/new_left" /}
+
+{include file="public/new_head" /}
+
+<input type="hidden" id="choose" value="open_platform_setting">
+<div class="content">
+
+    <div class="content_title">开放平台配置（配置后可使用扫码一键绑定小程序功能，不使用可不配置此项）</div>
+
+    <form class="open_form" action="{:url('index/OpenPlatformSetting/save')}" method="post" onsubmit="return checkinfo();">
+
+        <input type="hidden" name="id" value="{$info['id']}">
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl">AppId<span>*</span></div>
+            <div class="open_form_right fl">
+                <input class="open_form_text" type="text" name="app_id" id="app_id" value="{$info['app_id']}" />
+            </div>
+        </div>
+
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl">AppSecret<span>*</span></div>
+            <div class="open_form_right fl">
+                <input class="open_form_text" type="text" name="app_secret" id="app_secret" value="{$info['app_secret']}" />
+            </div>
+        </div>
+
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl">token<span>*</span></div>
+            <div class="open_form_right fl">
+                <input class="open_form_text" type="text" name="token" id="token" value="{$info['token']}" />
+            </div>
+        </div>
+
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl">EncodingAESKey<span>*</span></div>
+            <div class="open_form_right fl">
+                <input class="open_form_text" type="text" name="encoding_aes_key" id="encoding_aes_key" value="{$info['encoding_aes_key']}" />
+            </div>
+        </div>
+
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl">域名配置<span>*</span></div>
+            <div class="open_form_right fl">
+                <input class="open_form_text" type="text" name="config_domain" id="config_domain" value="{$info['config_domain']}" />
+            </div>
+        </div>
+
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl">TemplateId<span>*</span></div>
+            <div class="open_form_right fl">
+                <input class="open_form_text" type="text" name="template_id" id="template_id" value="{$info['template_id']}" />
+            </div>
+        </div>
+
+        <div class="clearfix mb-30">
+            <div class="open_form_title fl"></div>
+            <div class="open_form_right fl">
+                <input class="open_form_submit" type="submit" name="" value="提交">
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+    function checkinfo(){
+        if(!$('#app_id').val()){
+            alert('请输入AppId');return false;
+        }
+        if(!$('#app_secret').val()){
+            alert('请输入AppSecret');return false;
+        }
+        if(!$('#token').val()){
+            alert('请输入token');return false;
+        }
+        if(!$('#encoding_aes_key').val()){
+            alert('请输入EncodingAESKey');return false;
+        }
+        if(!$('#config_domain').val()){
+            alert('请输入域名配置');return false;
+        }
+        if(!$('#template_id').val()){
+            alert('请输入TemplateId');return false;
+        }
+    }
+
+</script>
+
+</html>
+

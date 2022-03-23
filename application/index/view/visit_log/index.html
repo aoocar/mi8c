@@ -1,0 +1,94 @@
+{include file="public/head" /}
+{include file="public/top" /}
+<style type="text/css">
+    thead{
+        background: #fafafa;
+    }
+    table{
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+        border: 1px solid #f0f0f0;
+    }
+    th,td{
+        border: 1px dashed #f0f0f0;
+        text-align: left;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+    th{
+        height: 45px;
+    }
+    td{
+        height: 62px;
+    }
+    .item_nickname{
+        width: 116px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<input type="hidden" id="nowhtml" value="navVIP" class="navVIP220">
+<div class="row-fluid">
+    <div class="span12">
+        <div class="portlet box">
+            <div class="float-left mr-20" style="margin: 10px;">
+          	    <a class="btn btn-default btncolor" onclick="return confirm('确认删除全部访问记录吗？'); return false;" href="{:url('delete_all', ['appletid'=>$appletid_info['id'], 'id'=>$item['id']])}" style="color: #d9534f;border: 1px solid #d9534f;background: #fff;border-radius: 4px;padding: 1px 6px;">全部删除</a>
+          	</div>
+        </div>
+
+        <div class="portlet-body">
+            <table id="sample_editable_1">
+                <thead>
+                <tr>
+                    <th style="width: 50px">ID</th>
+                    <th style="width: 200px">头像-昵称</th>
+                    <th style="width: 100px">访问记录描述</th>
+                    <th style="width: 100px">缩略图</th>
+                    <th style="width: 80px">创建时间</th>
+                    <th style="width: 100px">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="item"}
+                <tr>
+                    <td>
+                        {$item.id}
+                    </td>
+
+                    <td>
+                        <img src="{$item.avatar}" onerror="this.src='__STATIC_ROOT__/image/nopic.jpg'" style="width:50px; height:50px;">-<span class="item_nickname">{$item.nickname}{$item.phone}</span>
+                    </td>
+
+                    <td>{$item.remark}</td>
+                    <td><img src="{$item.thumb}" style="width:50px;height:auto" /></td>
+                    <td>{:date("Y-m-d H:i:s", $item['create_time'])}</td>
+                    <td>
+                        <a class="btn btn-default btn-sm btncolor" onclick="return confirm('确认删除访问记录吗？'); return false;" href="{:url('delete', ['appletid'=>$appletid_info['id'], 'id'=>$item['id']])}" style="color: #d9534f;border: 1px solid #d9534f;background: #fff;border-radius: 4px;padding: 1px 6px;">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+            <div>
+                <div class="fenye_left">
+                    一共查询到<font color="red" style="padding:0 10px;">{$count}</font>条数据
+                </div>
+                <div class="fenye_right">
+                    {$page}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#submit').on('click', function(){
+            var keywords = $('input[name="keywords"]').val();
+            var url = "{:url('index', ['appletid'=>$appletid_info['id'], 'id'=>$item['id']])}";
+            window.location.href= url+"?status="+ status +"&keywords="+keywords;
+        });
+    });
+</script>
+{include file="public/foot_more" /}

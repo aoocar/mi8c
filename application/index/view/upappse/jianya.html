@@ -1,0 +1,46 @@
+{include file="public/head" /} {include file="public/s_head" /}
+
+
+
+<div class="row-fluid">
+
+    <div class="span12">
+
+
+        <div class="portlet box ">
+
+
+            <div class="portlet-body" style="width:60%; margin:0 auto">
+                <div style="width: 100%; display: flex; ">
+                    <svg style="margin: auto;" t="1588395945447" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1580" width="200" height="200"><path d="M520.43956 514.813187m-362.901098 0a362.901099 362.901099 0 1 0 725.802197 0 362.901099 362.901099 0 1 0-725.802197 0Z" fill="#065FED" p-id="1581"></path><path d="M521.564835 650.971429h-1.687912c-11.815385 0-21.38022-9.564835-21.38022-21.38022V394.408791c0-11.815385 9.564835-21.38022 21.38022-21.38022h1.687912c11.815385 0 21.38022 9.564835 21.38022 21.38022v235.182418c0 11.815385-9.564835 21.38022-21.38022 21.38022z" fill="#FAFCFF" p-id="1582"></path><path d="M610.461538 482.18022c-8.43956 8.43956-22.505495 8.43956-30.945054 0L509.749451 412.413187c-8.43956-8.43956-8.43956-22.505495 0-30.945055s22.505495-8.43956 30.945054 0l69.767033 69.767033c9.002198 8.43956 9.002198 22.505495 0 30.945055z" fill="#FAFCFF" p-id="1583"></path><path d="M426.479121 484.430769c-8.43956-8.43956-8.43956-22.505495 0-30.945055l72.58022-72.580219c8.43956-8.43956 22.505495-8.43956 30.945055 0s8.43956 22.505495 0 30.945054L457.986813 484.430769c-9.002198 8.43956-22.505495 8.43956-31.507692 0z" fill="#FAFCFF" p-id="1584"></path></svg>
+                </div>
+                <div style="text-align:center;font-size:16px; margin-botto:20px; color: #000000;">
+                    <h3>系统更新成功</h3>
+                </div>
+
+                <div style="text-align:center; margin-botto:20px;color: #000000; font-size: 17px;">
+                    <p>{$vidkds}</p>
+                </div>
+
+                <div style="text-align:center; margin-botto:20px;">
+                    页面将于10秒后跳转,<a href="{:Url('Applet/index')}">立即跳转</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $(function() {
+        setTimeout(function() {
+            location.href = "{:Url('Applet/index')}"
+        }, 10000)
+    })
+</script>

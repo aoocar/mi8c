@@ -1,0 +1,220 @@
+{include file="public/head" /}
+{include file="public/top" /}
+<input type="hidden" id="nowhtml" value="navModel" class="navSystem23">
+	
+<style type="text/css">
+#edui1{
+	display: none;
+}
+.navSystem23{
+	display: block !important;
+}
+
+.form_nobg{
+	background-color: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 216px;
+	right: 0;
+	height: 52px;
+	line-height: 52px;
+	box-shadow:0px 1px 8px 0px rgba(0, 0, 0, 0.08);
+	text-align: center;
+	padding: 0 !important;
+	margin: 0 !important;
+	z-index: 1000;
+}
+.content_head_title{
+	display:none
+}
+.page_content{
+	top:0;
+	padding: 0;
+}
+.back_go{
+	border-bottom: 1px solid #eee;
+	padding: 15px 15px 10px;
+}
+.add_imgs{
+	display: inline-block;
+	width: 67px;
+	height: 67px;
+	box-sizing: border-box;
+	border: 1px dashed #dfe4e7;
+	background: #f9f9f9;
+	border-radius: 3px;
+	text-align: center;
+	color: #DFE4E7;
+	font-size: 12px;
+}
+.commonchangepic{
+	cursor: pointer;
+}
+input[class*=span].date_time {
+    width: 180px;
+}
+</style>
+	<div class="row-fluid">
+		<div class="back_go">
+			<a href="#" onClick="javascript:history.go(-1);"><span><img src="__STATIC_ROOT__/image/static/zuo.png" alt="" style="width:28px;margin-left:-6px;margin-right:4px;"></span><span style="font-size:18px;">编辑直播</span></a>
+		</div>
+		<div class="portlet box">
+			<div class="portlet-body form">
+				<form action="{:Url('Liveshow/save')}?appletid=<?php echo $_GET['appletid']?>" id="form_sample_2" class="form-horizontal" method="post" enctype="multipart/form-data" onsubmit = "return checkinfo();">
+					<input type="hidden" name="rid" value="{if $room}{$room.id}{/if}"/>
+					<div class="control-group">
+						<label class="control-label">排序</label>
+						<div class="controls">
+							<input name="sort" type="text" class="span1 m-wrap" value="{if $room}{$room.sort}{/if}" />
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;">序号越大越靠前</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 直播名称</label>
+						<div class="controls">
+							<input name="name" type="text" class="span1 m-wrap" value="{if $room}{$room.name}{/if}" disabled/>
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;">该场次直播名称</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 来源</label>
+						<div class="controls">
+							<label class="radio">
+								<input disabled type="radio" name="live_source" value="1" {if $room}{if $room.live_source==1}checked=checked{/if}{else}checked=checked{/if}/>小程序直播
+							</label>
+							<!--<label class="radio">-->
+							<!--	<input disabled type="radio" name="live_source" value="2"/>虎牙-->
+							<!--</label>-->
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 样式</label>
+						<div class="controls">
+							<label class="radio">
+								<input disabled type="radio" name="style" value="1" {if $room}{if $room.style==1}checked=checked{/if}{else}checked=checked{/if}/>竖屏
+							</label>
+							<label class="radio">
+								<input disabled type="radio" name="style" value="2" {if $room}{if $room.style==2}checked=checked{/if}{/if}/>横屏
+							</label>
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;">竖屏为全屏</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 列表显示</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="is_list" value="1" {if $room}{if $room.is_list==1}checked=checked{/if}{else}checked=checked{/if}/>显示
+							</label>
+							<label class="radio">
+								<input type="radio" name="is_list" value="2" {if $room}{if $room.is_list==2}checked=checked{/if}{/if}/>隐藏
+							</label>
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;">是否在列表中显示</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 是否推荐</label>
+						<div class="controls">
+							<label class="radio">
+								<input type="radio" name="is_rec" value="1" {if $room}{if $room.is_rec==1}checked=checked{/if}{/if}/>推荐
+							</label>
+							<label class="radio">
+								<input type="radio" name="is_rec" value="2" {if $room}{if $room.is_rec==2}checked=checked{/if}{else}checked=checked{/if}/>不推荐
+							</label>
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;">用于DIY直播模块区分展示</span>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 缩略图</label>
+						<div class="controls">
+							<div class="fileupload fileupload-new" data-provides="fileupload">
+								<div class="fileupload-new thumbnail commonuploadpic" style="width:90px;height:67px;">
+									{if $room && $room.thumb}
+									<img src="{$room.thumb}"/>
+									{else}
+									<img src="__STATIC_ROOT__/image/noimage_1.png" alt="" />
+									{/if}
+								</div>
+								<div class="add_imgs">
+									<span class="fileupload-new commonchangepic" data-type="1">
+										<div style="font-size: 26px;line-height: 36px;">+</div>选择图片
+										<input type="hidden" name="commonuploadpic" value="{if $room}{if $room.thumb}{$room.thumb}{/if}{/if}">
+									</span>
+								</div>
+							</div>
+						</div>
+						<span style="color:#c7cddb;margin-left:180px;">建议尺寸640*480，支持png、jpg、jpeg格式，大小不超过200K</span>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 分享图</label>
+						<div class="controls">
+							<div class="fileupload">
+								<div class="thumbnail" style="width:67px;height:67px;">
+									{if $room && $room.share_thumb}
+									<img src="{$room.share_thumb}"/>
+									{else}
+									<img src="__STATIC_ROOT__/image/noimage_1.png" />
+									{/if}
+								</div>
+							</div>
+						</div>
+						<!--<span style="color:#c7cddb;margin-left:180px;">建议尺寸不小于350*350，支持png、jpg、jpeg格式，大小不超过100K</span>-->
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 直播时间</label>
+						<div class="controls">
+							<input disabled name="start_time" type="text" class="span1 m-wrap date_time" value="{if $room.start_time != 0}{$room.start_time|date='Y-m-d H:i:s',###}{else}{/if}" />
+							<span style="margin:0 12px;font-size:20px;">—</span>
+							<input disabled name="end_time" type="text" class="span1 m-wrap date_time" value="{if $room.end_time != 0}{$room.end_time|date='Y-m-d H:i:s',###}{else}{/if}" />
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;">此时间仅作为展示，不会自动改变直播状态</span>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 直播类型</label>
+						<div class="controls">
+							<label class="radio">
+								<input disabled type="radio" name="type" value="1"  {if $room}{if $room.type==1}checked=checked{/if}{else}checked=checked{/if}/>直播
+							</label>
+							<!--<label class="radio">-->
+							<!--	<input disabled type="radio" name="type" value="2" {if $room}{if $room.type==2}checked=checked{/if}{/if}/>回放-->
+							<!--</label>-->
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;"></span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label"><span>*</span> 直播间ID</label>
+						<div class="controls">
+							<input name="room_id" type="text" class="span1 m-wrap" value="{if $room}{$room.room_id}{/if}" disabled/>
+							<span style="color:#c7cddb; line-height:40px; margin-left:20px;"></span>
+						</div>
+					</div>
+					<!--<div class="control-group">-->
+					<!--	<label class="control-label">回放链接</label>-->
+					<!--	<div class="controls">-->
+					<!--		<input placeholder="请输入回放链接" name="back_link" type="text" class="span1 m-wrap" value="{if $room}{$room.back_link}{/if}" />-->
+					<!--		<span style="color:#c7cddb; line-height:40px; margin-left:20px;">请输入.mp4结尾的视屏链接</span>-->
+					<!--	</div>-->
+					<!--</div>-->
+					
+					<div class="form-actions form_nobg">
+						<button type="submit" class="btn" style="color:#fff;background-color:#4385ff;">确定</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<script>
+	function checkinfo(){
+		var thumb = $("input[name='commonuploadpic']").val();
+		if(!thumb){
+			alert("请先设置商品缩略图");
+			return false;
+		}
+	}
+</script>
+
+{include file="public/foot_more" /}

@@ -1,0 +1,122 @@
+{include file="public/head" /}
+
+<body class="page-header-fixed">
+
+	<div class="page-container">
+		{include file="public/left_setting" /}
+		<div class="page_main">
+			<div class="content_head clearfix navbar" style="margin-bottom: 0">
+				<div class="content_head_left"></div>
+			</div>
+			<div class="page_content" id="container">
+
+				<style type="text/css">
+					form {
+						margin: 0 !important;
+					}
+					
+					.form_nobg {
+						background-color: #fff;
+						border-top: 0 !important;
+					}
+				</style>
+
+				<input type="hidden" id="nowhtml" value="navPlatformsetting" class="navPlatformsetting1">
+
+				<div class="row-fluid">
+
+					<div class="portlet box">
+						<div class="portlet-body form">
+							<form action="{:Url('Platformsetting/save')}?appletid=" id="form_sample_2" class="form-horizontal" method="post" enctype="multipart/form-data" onsubmit="return checkinfo();">
+								<div class="control-group" style="padding-left: 4rem;">
+									<h3>开放平台配置（配置后可使用扫码一键绑定小程序功能，不使用可不配置此项）</h3>
+								</div>
+								<div class="ali">
+									<div class="control-group">
+										<label class="control-label">AppId <span style="color:red">*</span></label>
+										<div class="controls">
+											<input name="tx_app_id" type="text" id="tx_app_id" class="span3 m-wrap" value="{if $open_set}{$open_set.app_id}{/if}" style="height: 35px !important;">
+											<span style="color:#999999; line-height:40px; margin-left:20px;">AppId</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">AppSecret <span style="color:red">*</span></label>
+										<div class="controls">
+											<input name="tx_app_secret" type="text" id="tx_app_secret" class="span3 m-wrap" value="{if $open_set}{$open_set.app_secret}{/if}" style="height: 35px !important;">
+											<span style="color:#999999; line-height:40px; margin-left:20px;">AppSecret</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">token <span style="color:red">*</span></label>
+										<div class="controls">
+											<input name="tx_token" type="text" id="tx_token" class="span3 m-wrap" value="{if $open_set}{$open_set.token}{/if}" style="height: 35px !important;">
+											<span style="color:#999999; line-height:40px; margin-left:20px;">token</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">EncodingAESKey <span style="color:red">*</span></label>
+										<div class="controls">
+											<input name="tx_encoding_aes_key" type="text" id="tx_encoding_aes_key" class="span3 m-wrap" value="{if $open_set}{$open_set.encoding_aes_key}{/if}" style="height: 35px !important;">
+											<span style="color:#999999; line-height:40px; margin-left:20px;">EncodingAESKey</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">域名配置 <span style="color:red">*</span></label>
+										<div class="controls">
+											<input name="tx_config_domain" type="text" id="tx_config_domain" class="span3 m-wrap" value="{if $open_set}{$open_set.config_domain}{/if}" style="height: 35px !important;">
+											<span style="color:#999999; line-height:40px; margin-left:20px;">域名配置</span>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">TemplateId <span style="color:red">*</span></label>
+										<div class="controls">
+											<input name="tx_template_id" type="text" id="tx_template_id" class="span3 m-wrap" value="{if $open_set}{$open_set.template_id}{/if}" style="height: 35px !important;">
+											<span style="color:#999999; line-height:40px; margin-left:20px;">TemplateId</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-actions form_nobg" style="padding-top: 40px;border-radius: 5px;">
+									<button type="submit" class="btn" style="color: #fff;background-color: #4385ff;">确定</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+
+				<script type="text/javascript">
+					function checkinfo() {
+						var tx_app_id = $.trim($("#tx_app_id").val());
+						if(!tx_app_id) {
+							alert("请设置AppId！");
+							return false;
+						}
+						var tx_app_secret = $.trim($("#tx_app_secret").val());
+						if(!tx_app_secret) {
+							alert("请设置AppSecret！");
+							return false;
+						}
+						var tx_token = $.trim($("#tx_token").val());
+						if(!tx_token) {
+							alert("请设置token！");
+							return false;
+						}
+						var tx_encoding_aes_key = $.trim($("#tx_encoding_aes_key").val());
+						if(!tx_encoding_aes_key) {
+							alert("请设置EncodingAESKey！");
+							return false;
+						}
+						var tx_config_domain = $.trim($("#tx_config_domain").val());
+						if(!tx_config_domain) {
+							alert("请设置域名配置！");
+							return false;
+						}
+						var tx_template_id = $.trim($("#tx_template_id").val());
+						if(!tx_template_id) {
+							alert("请设置TemplateId！");
+							return false;
+						}
+					}
+				</script>
+
+				{include file="public/foot_more" /}

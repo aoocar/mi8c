@@ -1,0 +1,220 @@
+{include file="public/head" /}
+{include file="public/top" /}
+<style>
+	.domain_item {
+		display: flex;
+	}
+
+	.layui-btn {
+		margin: 0;
+	}
+</style>
+<input type="hidden" id="nowhtml" value="navSystem" class="navSystem10">
+<script src="/js/layer/layer.js"></script>
+
+<div class="container-fluid">
+	<div class="row" style="margin-top: 15px; padding: 20px;">
+		<div class="panel panel-default">
+			<div class="panel-heading">设置域名（请悉知：需要先将域名登记到第三方平台的小程序业务域名中，才可进行配置，否则提交的域名将会被过滤掉）</div>
+			<div class="panel-body">
+				<form action="" method="post" id="main-form">
+					<input type="hidden" name="type" value="main">
+					<table class="table table-bordered table-responsive table-hover">
+						<tr>
+							<th>requestdomain</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="domain_item">
+									<input type="text" name="requestdomain[]" value="{$domains['requestdomain'][0]}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="addDomain(this,'requestdomain[]')">添加</button>
+								</div>
+								<?php $i=0; ?>
+								{volist name="domains['requestdomain']" id="d"}
+								{if $i!=0}
+								<div class="domain_item">
+									<input type="text" name="requestdomain[]" value="{$d}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm "
+										onclick="delDomain(this)">删除</button>
+								</div>
+								{/if}
+								<?php $i++; ?>
+								{/volist}
+							</td>
+						</tr>
+
+						<tr>
+							<th>wsrequestdomain</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="domain_item">
+									<input type="text" name="wsrequestdomain[]"
+										value="{$domains['wsrequestdomain'][0]}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm "
+										onclick="addDomain(this,'wsrequestdomain[]')">添加</button>
+								</div>
+								<?php $i=0; ?>
+								{volist name="domains['wsrequestdomain']" id="d"}
+								{if $i!=0}
+								<div class="domain_item">
+									<input type="text" name="wsrequestdomain[]" value="{$d}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="delDomain(this)">删除</button>
+								</div>
+								{/if}
+								<?php $i++; ?>
+								{/volist}
+							</td>
+						</tr>
+
+						<tr>
+							<th>uploaddomain</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="domain_item">
+									<input type="text" name="uploaddomain[]" value="{$domains['uploaddomain'][0]}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="addDomain(this,'uploaddomain[]')">添加</button>
+								</div>
+								<?php $i=0; ?>
+								{volist name="domains['uploaddomain']" id="d"}
+								{if $i!=0}
+								<div class="domain_item">
+									<input type="text" name="uploaddomain[]" value="{$d}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="delDomain(this)">删除</button>
+								</div>
+								{/if}
+								<?php $i++; ?>
+								{/volist}
+							</td>
+						</tr>
+
+						<tr>
+							<th>downloaddomain</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="domain_item">
+									<input type="text" name="downloaddomain[]" value="{$domains['downloaddomain'][0]}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="addDomain(this,'downloaddomain[]')">添加</button>
+								</div>
+								<?php $i=0; ?>
+								{volist name="domains['downloaddomain']" id="d"}
+								{if $i!=0}
+								<div class="domain_item">
+									<input type="text" name="downloaddomain[]" value="{$d}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="delDomain(this)">删除</button>
+								</div>
+								{/if}
+								<?php $i++; ?>
+								{/volist}
+							</td>
+						</tr>
+					</table>
+					<button type="button" class="btn-save layui-btn layui-btn-normal layui-btn-sm">保存</button>
+				</form>
+				<br>
+				<form action="" method="post" id="main-form2">
+					<input type="hidden" name="type" value="webview">
+					<table class="table table-bordered table-responsive table-hover">
+						<tr>
+							<th>webviewdomain</th>
+						</tr>
+						<tr>
+							<td>
+								<div class="domain_item">
+									<input type="text" name="webviewdomain[]" value="{$webview['webviewdomain'][0]}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="addDomain(this,'webviewdomain[]')">添加</button>
+								</div>
+								<?php $i=0; ?>
+								{volist name="webview['webviewdomain']" id="d"}
+								{if $i!=0}
+								<div class="domain_item">
+									<input type="text" name="webviewdomain[]" value="{$d}">
+									<button type="button" class="layui-btn layui-btn-normal layui-btn-sm"
+										onclick="delDomain(this)">删除</button>
+								</div>
+								{/if}
+								<?php $i++; ?>
+								{/volist}
+							</td>
+						</tr>
+					</table>
+					<button type="button" class="btn-save2 layui-btn layui-btn-normal layui-btn-sm">保存</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/html" id="domain_item_tpl">
+	<div class="domain_item">
+		<input type="text" name="">
+		<button type="button" class="btn btn-xs btn-danger" onclick="delDomain(this)">删除</button>
+	</div>
+</script>
+
+<script src="__STATIC_ROOT__/js/layui.js"></script>
+<script src="__STATIC_ROOT__/js/jquery.js"></script>
+
+<script>
+		
+	function addDomain(e, name) {
+		var tpl = $('#domain_item_tpl').html();
+		var box = $(e).parents('td');
+		tpl = $(tpl);
+		tpl.find('input').attr('name', name);
+		box.append(tpl);
+	}
+
+	function delDomain(e) {
+		$(e).parents('div.domain_item').remove();
+	}
+
+	$('.btn-save').on('click', function (e) {
+		layer.confirm('是否要保存？',{'icon':3, 'title':'提示'}, function (index) {
+		var formData = $('#main-form').serialize();
+		$.ajax({
+			url: '/index/wxreview/setDomain?appletid={$appletid}',
+			method: 'post',
+			data: formData,
+			success: function (resp) {
+				layer.msg(resp.msg,{'icon':1});
+				if (resp.status == 'success') {
+					// location.reload(1);
+				}
+			},
+			error: function () {
+				alert('网络服务器错误，请稍后重试');
+			}
+		});
+	});
+})
+	$('.btn-save2').on('click', function (e) {
+		layer.confirm('是否要保存？',{'icon':3, 'title':'提示'}, function (index) {
+		var formData = $('#main-form2').serialize();
+		$.ajax({
+			url: '/index/wxreview/setDomain?appletid={$appletid}',
+			method: 'post',
+			data: formData,
+			success: function (resp) {
+				layer.msg(resp.msg,{'icon':1});
+				if (resp.status == 'success') {
+					// location.reload(1);
+				}
+			},
+			error: function () {
+				alert('网络服务器错误，请稍后重试');
+			}
+		});
+	});
+})
+</script>
+
+{include file="public/foot_more" /}

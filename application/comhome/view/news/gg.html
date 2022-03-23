@@ -1,0 +1,128 @@
+{include file="public/top" /}
+<title>产品动态</title>
+<meta name="keywords" content="产品动态">
+<meta name="description" content="产品动态">
+<link rel="stylesheet" type="text/css" href="__STATIC_ROOT__/com/css/icon/iconfont.css"/>
+<link rel="stylesheet" type="text/css" href="__STATIC_ROOT__/com/css/wnmd.css"/>
+<script src="__STATIC_ROOT__/com/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC_ROOT__/com/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC_ROOT__/com/js/wnmd.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Favicon -->
+<link href="/home/img/favicon.ico" rel="shortcut icon">
+<!-- Bootstrap CSS -->
+<link href="//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- themify icon -->
+
+<link rel="stylesheet" type="text/css" href="/home/css/themify-icons.css">
+<!-- colorbox popup -->
+<link rel="stylesheet" type="text/css" href="/home/css/colorbox.css">
+<!-- swiper slider -->
+<link rel="stylesheet" type="text/css" href="/home/css/swiper.min.css">
+<!-- Animate Css -->
+<link rel="stylesheet" type="text/css" href="/home/css/animate.css">
+<!-- Google Font- Rubik -->
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+<!-- Google Font- Fira sans -->
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,500,700" rel="stylesheet">
+<!-- CSS -->
+
+<link href="/home/css/style.css" rel="stylesheet">
+<link href="/home/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/com/css/icon/iconfont.css">
+<link rel="stylesheet" href="/com/css/wnmd.css">
+<style>
+    .navbar-brand{
+        display: flex;
+        line-height: 3;
+        font-size: 21px;
+        padding-right: 23px;
+        background: linear-gradient(to right, #9864d0 0%, #2575fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .solution_single_div1{
+        background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 200px;
+        line-height: 200px;
+        float: right;
+        top: 40%;
+        position: absolute;
+        left: 58%;
+    }
+    .f_widget_1 h2{
+        display: flex;
+    }
+    .footer_logo{
+        width: 29%;
+    }
+    .footer_logo img{
+        width:100%;
+    }
+    .footer_logo_text{
+        font-size: 3em;
+        margin: auto;
+        background: linear-gradient(to right, #9249e2 0%, #2575fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .paypent_list a img{
+        display: inline;
+    }
+    .top_certified a img{
+        display: inline;
+    }
+    .img-fluid{
+        display: block;
+        height: auto;
+        max-width: 100%;
+
+    }
+
+</style>
+</head>
+
+<body>
+
+    {include file="public/head"}
+        <div class="cases_banner" style="background-image: url('{$sbase.banner[\'banner1\']}'); height: 502px">
+        <div class="profit_banner_div main " >
+            <p class="profit_banner_en">{$sbase.banner['banner1_t1']}</p>
+            <p class="profit_banner_cn">{$sbase.banner['banner1_t1']}</p>
+        </div>
+        </div>
+         <div class="dynamic_nav">
+            <div class="main2 clearfix">
+                <a href="{:Url('News/index')}">更新日志</a>
+
+                <a href="{:Url('News/index')}">产品动态</a>
+
+                <a class="hover" href="{:Url('News/gg')}">企业公告</a>
+
+            </div>
+        </div>
+        <div class="dynamic_content main2">
+            {foreach $list as $rs}
+            <a href="{:Url('showgg')}?id={$rs.id}" class="dynamic_single">
+                <div class="dynamic_single_date"><span></span>{:date('Y',$rs.createtime)}.{:date('m',$rs.createtime)}.{:date('d',$rs.createtime)}</div>
+                <div class="dynamic_single_div2 clearfix">
+                    <div class="dynamic_single_title">{$rs.title}</div>
+                    <div class="dynamic_link">VIEW MORE <img src="__STATIC_ROOT__/com/img/dynamic_yjt.png"/></div>
+                </div>
+            </a>
+            {/foreach}
+            <div class="dynamic_fy">
+                <ul>
+                    {$lists->render()}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    {include file="public/foot"}
+    
+</body> 
+</html>

@@ -1,0 +1,187 @@
+
+<!-- Pre-loader -->
+<div class="preloader">
+	<div class="loader">
+		<div class="loader_inner"></div>
+		<div class="loader_inner"></div>
+	</div>
+</div>
+
+<!-- mobile menu icon -->
+<a class="burger_icon d-md-flex d-lg-none navbar-toggler" data-toggle="collapse" data-target="#mega_menu">
+	<div class="stick stick_1"></div>
+	<div class="stick stick_2"></div>
+	<div class="stick stick_3"></div>
+</a>
+
+<!-- offcanvas overlay -->
+<div class="offcanvas_overlay"></div>
+
+<!-- offcanvas menu -->
+<div class="offcanvas_menu">
+    <a href="index.html" class="logo"><img src="{$sbase.logo}" alt="logo"></a>
+    <p>多功能云端小程序系统</p>
+    <ul class="social_link">
+        <li><a href="#"><i class="ti-facebook"></i></a></li>
+        <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+        <li><a href="#"><i class="ti-pinterest"></i></a></li>
+    </ul>
+    <h5>Get In Tuch:</h5>
+    <div class="contact_form">
+        <form>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <input type="text" class="form-control" id="inputfirstname3" placeholder="Name"
+                           required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                                <textarea rows="3" class="form-control" id="inputmessage" placeholder="Message"
+                                          required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="boxed_btn">Submit</button>
+        </form>
+    </div>
+    <img src="{$sbase.ewm}" style="width: 109px" alt="call" class="mobileno">
+</div>
+
+<!--Modal For Search -->
+<div class="search_bar">
+	<div class="search_body">
+		<form action="#">
+			<input type="text" placeholder="Enter your text"> <button><i class="ti-search"></i></button>
+		</form>
+	</div>
+</div>
+
+<!-- Start Header Section -->
+<header class="header_wrap_4">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<nav class="mega_nav navbar navbar-expand-lg d-flex justify-content-between p-0">
+					<a class="navbar-brand" href="/"><img src="{$sbase.logo}" class="img-fluid" alt="Ahope logo_4"></a>
+					<div class="p-lg-0 nav_wrapper">
+						<ul class="navbar-nav m-auto collapse navbar-collapse" id="mega_menu" >
+							<li class="nav-item home_drop">
+								<a class="nav-link collapsed hcollapse"  href="/" >首页</a>
+
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{:Url('Comhome/News/index')}">最新动态</a>
+							</li>
+							<li class="nav-item page_drop">
+								<a class="nav-link collapsed hcollapse"  href="#mega_page_details" data-toggle="collapse">功能展示</a>
+								<div class="mega_page_details hid" id="mega_page_details">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-4 d-lg-block d-none">
+												<div id="mega_page_slider" class="carousel slide" data-ride="carousel">
+													<div class="carousel-inner">
+														{foreach $navbar_items_lists as $k => $v}
+														<div class="carousel-item {if $k === 0} active {/if}">
+															<a href="{:Url('/comhome/functionshow/show')}?id={$v.id}"><img class="d-block w-100" src="{$v.funcimg}" alt="First slide"> </a>
+														</div>
+														{/foreach}
+
+													</div>
+													<a class="carousel-control-prev" href="#mega_page_slider" role="button" data-slide="prev">
+														<i class="ti-angle-left"></i>
+													</a>
+													<a class="carousel-control-next" href="#mega_page_slider" role="button" data-slide="next">
+														<i class="ti-angle-right"></i>
+													</a>
+												</div>
+											</div>
+											<div class="col-lg-2 col-12">
+												{if $navbar_items_lists}
+												<ul class="mega_page_list">
+													{foreach  $navbar_items_lists as $item}
+													{if $item.id < 10}
+													<li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+													{/if}
+													{/foreach}
+
+												</ul>
+												{/if}
+											</div>
+											<div class="col-lg-2 col-12">
+												{if $navbar_items_lists}
+												<ul class="mega_page_list">
+													{foreach  $navbar_items_lists as $item}
+													{if $item.id < 16 && $item.id > 10 }
+													<li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+													{/if}
+													{/foreach}
+
+												</ul>
+												{/if}
+											</div>
+											<div class="col-lg-2 col-12">
+												{if $navbar_items_lists}
+												<ul class="mega_page_list">
+													{foreach  $navbar_items_lists as $item}
+													{if $item.id < 22 && $item.id > 16 }
+													<li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+													{/if}
+													{/foreach}
+
+												</ul>
+												{/if}
+											</div>
+											<div class="col-lg-2 col-12">
+												{if $navbar_items_lists}
+												<ul class="mega_page_list">
+													{foreach  $navbar_items_lists as $item}
+													{if $item.id < 28 && $item.id > 22 }
+													<li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+													{/if}
+													{/foreach}
+
+												</ul>
+												{/if}
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{:Url('Comhome/About/index')}" >关于我们</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{:Url('/comhome/solution/index')}">解决方案</a>
+							</li>
+							<li class="nav-item blog_drop">
+								<a class="nav-link collapsed hcollapse" href="{:Url('Comhome/Cases/index')}" >案例演示</a>
+
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/index/login/index.html">登录</a>
+							</li>
+							{if $register_flag == 1}
+							<li class="nav-item">
+								<a class="nav-link" href="{:Url('Index/Register/index')}">注册</a>
+							</li>
+							{/if}
+							<li class="nav_right nav-item">
+								<a href="#" class="search_icon"><i class="ti-search search_icon"></i></a>
+							</li>
+							<li class="nav_right nav-item d-none d-lg-block">
+								<a href="#" class="offcanvas"><i class="ti-align-right"></i></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End Header Section -->

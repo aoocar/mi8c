@@ -1,0 +1,234 @@
+{include file="public/head" /}
+{include file="public/top" /}
+<style type="text/css">
+	form {
+		margin: 0 !important; 
+		display: inline-block !important;
+	}	
+	thead{
+		background: #fafafa;
+	}
+	table{
+		width: 100%;
+		text-align: center;
+		border: 1px solid #f0f0f0;
+		margin-bottom: 20px;
+	}
+	th,td{
+		border: 1px dashed #f0f0f0;
+		text-align: center;
+	}
+	th{
+		height: 45px;
+	}
+	td{
+		height: 62px;
+	}
+	.navSystem23{
+		display: block !important;
+	}
+	.vo_nameBox{
+		 display: flex;
+		 align-items: center;
+		 justify-content: center;
+		 padding: 10px;
+		 box-sizing: border-box;
+	}
+	.vo_nameImg{
+		width: 100px;
+		height: 80px;
+		margin-right: 10px;
+	}
+	.vo_infoBox{
+		text-align: left;
+	}
+	.vo_nametext{
+		padding: 2px 0;
+		font-weight: bold;
+		font-size: 14px;
+		margin: 0;
+		max-width: 180px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.vo_nametip{
+		margin: 0 0 5px;
+		font-size: 12px;
+	}
+	.vo_namestyle{
+		margin-left: 8px;
+	}
+	.copy_href{
+		background: rgba(67, 133, 255, 0.1);
+		text-align: center;
+		border: 1px solid #4385ff;
+		color: #4385ff;
+		padding: 1px 6px;
+		box-sizing: border-box;
+		border-radius: 4px;
+		font-size: 13px;
+	}
+	.info_list1{
+		background: #4d90fe;
+		color: #ffffff;
+		padding: 1px 4px;
+		border-radius: 3px;
+		font-size: 12px;
+	}
+	.info_list2{
+		background: #d84a38;
+		color: #ffffff;
+		padding: 1px 4px;
+		border-radius: 3px;
+		font-size: 12px;
+	}
+	.info_list3{
+		background: #35aa47;
+		color: #ffffff;
+		padding: 1px 4px;
+		border-radius: 3px;
+		font-size: 12px;
+		margin-left: 5px;
+	}
+	.tips_loadd{
+		background: #fcf8e3;
+		color: #5C6270;
+		margin-bottom: 10px;
+		padding: 6px 20px;
+		border-radius: 2px;
+	}
+</style>
+
+<input type="hidden" id="nowhtml" value="navModel" class="navSystem23">
+	<div class="row-fluid">
+
+	<div class="span12">
+
+
+		<div class="portlet box ">
+
+
+			<div class="portlet-body">
+				<div class="input-box" style="display: flex;align-items: center;">
+					<div class="btn-group">					
+						<a href="{:Url('Liveshow/getfromwx')}?appletid=<?php echo $_GET['appletid']?>" >
+							<button id="sample_editable_1_new" class="btn" style="float:left;background: #4385ff;color: #fff;margin-right: 10px;text-align: center">
+								同步直播列表
+							</button>
+						</a>						
+					</div>
+					<div class="tips_loadd">
+						可使用直播列表与DIY组件中的直播模块展示直播，直播间只能在微信小程序端打开
+					</div>
+				</div>
+
+				<table id="sample_editable_1">
+					<thead>
+						<tr>
+							<th style="width: 60px;">房间号</th>
+							<th style="width: 300px;">直播名称</th>
+							<th style="width: 180px;">开播时间</th>
+							<th style="width: 150px;">直播状态</th>
+							<th style="width: 150px;">直播类型</th>
+							<th style="width: 150px">显示位置</th>
+							<th style="width: 200px">直播数据</th>
+							<th style="width: 150px">操作</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{volist name='data' id='vo'}
+						<tr>
+							<td>{$vo.room_id}</td>
+							<td>
+								<div class="vo_nameBox">
+									<img class="vo_nameImg" src="{$vo.thumb}"/>
+									<div class="vo_infoBox">
+										<p class="vo_nametext">{$vo.name}</p>
+										<p class="vo_nametip">
+											<span>{if $vo.live_source==1}小程序直播{else}虎牙直播{/if}</span> 
+											<span class="vo_namestyle">{if $vo.style==1}竖屏{else}{if $vo.style==2}横屏{/if}{/if}</span>
+										</p>
+										<a class="copy_href js-clip{$vo.room_id}" onclick="copyRid({$vo.room_id})" data-clipboard-text="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id={$vo.room_id}" href="javascript:;">复制直播间链接</a>	
+									</div>
+									
+								</div>
+							</td>
+							<td>
+								{if $vo.start_time != 0}{$vo.start_time|date='Y-m-d H:i:s',###}{else}{/if}
+							</td>
+							<td>
+								{if $vo.live_status==101}直播中{else}{/if}
+								{if $vo.live_status==102}未开始{else}{/if}
+								{if $vo.live_status==103}已结束{else}{/if}
+								{if $vo.live_status==104}禁播{else}{/if}
+								{if $vo.live_status==105}暂停中{else}{/if}
+								{if $vo.live_status==106}异常{else}{/if}
+								{if $vo.live_status==107}已过期{else}{/if}
+							</td>
+							<td>{if $vo.type==1}直播{else}{if $vo.type==2}回放{/if}{/if}</td>
+							<td>
+								{if $vo.is_list==1}<span class="info_list1">列表显示</span>{else}{/if}
+								{if $vo.is_list==2}<span class="info_list2">列表隐藏</span>{else}{/if}
+								{if $vo.is_rec==1}<span class="info_list3">推荐</span>{else}{/if}
+							</td>
+							<td>
+								观看人数：{$vo.visit_num}
+							</td>
+							<td>
+								<a href="{:Url('Liveshow/edit')}?appletid=<?php echo $_GET['appletid']?>&rid={$vo.id}">
+									<button style="color: #4385ff;border:1px solid #4385ff;background:#fff;border-radius: 4px">
+										编辑
+									</button>
+								</a>
+								<form action="{:Url('Liveshow/del')}?appletid=<?php echo $_GET['appletid']?>&lid={$vo.id}"  method="post" enctype="multipart/form-data" onsubmit = "return del()">
+									<button style="color: #e72b2b;border:1px solid #e72b2b;background:#fff;border-radius: 4px" type="submit">删除</button>
+								</form>
+							</td>										
+						</tr>
+						{/volist}
+					</tbody>
+				</table>
+				
+				<div>
+					<div class="fenye_left">
+						 一共查询到<font color="red" style="padding:0 10px;">{$lists->total()}</font>条数据 
+					</div>
+					<div class="fenye_right">
+						{$lists->render()}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+	function copyRid(id){
+		var clipboard = new Clipboard('.js-clip'+id);
+		clipboard.on('success', function(e) {
+			alert("直播间链接复制成功");
+			e.clearSelection();
+		});
+	
+		clipboard.on('error', function(e) {
+			alert("直播间链接复制失败");
+		});
+	}
+
+	function del(){
+		if(confirm('该删除操作不可逆，请谨慎操作?')){
+			return true;
+		}else{
+			return false;
+		}
+	}
+</script>
+
+
+
+{include file="public/foot_more" /}

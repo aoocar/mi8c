@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{$sbase.name}</title>
+    <meta name="keywords" content="{$sbase.name}">
+    <meta name="description" content="{$sbase.name}">
+    <!-- Favicon -->
+    <link href="/home/img/favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrapc/bootstrap.css" rel="stylesheet">
+    <!-- themify icon -->
+    <link rel="stylesheet" type="text/css" href="/home/css/themify-icons.css">
+    <!-- colorbox popup -->
+    <link rel="stylesheet" type="text/css" href="/home/css/colorbox.css">
+    <!-- swiper slider -->
+    <link rel="stylesheet" type="text/css" href="/home/css/swiper.min.css">
+    <!-- Animate Css -->
+    <link rel="stylesheet" type="text/css" href="/home/css/animate.css">
+    <!-- Google Font- Rubik -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
+    <!-- Google Font- Fira sans -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,400i,500,700" rel="stylesheet">
+    <!-- CSS -->
+    <link href="/home/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/com/css/icon/iconfont.css">
+    <link rel="stylesheet" href="/com/css/wnmd.css">
+    <style>
+        .navbar-brand{
+            display: flex;
+            line-height: 3;
+            font-size: 21px;
+            padding-right: 23px;
+            background: linear-gradient(to right, #9864d0 0%, #2575fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /*.navbar-brand img{*/
+        /*	width: 58px;*/
+        /*	height: auto;*/
+        /*	margin-right: 13%;*/
+
+        /*}*/
+        .solution_single_div1{
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 200px;
+            line-height: 200px;
+            float: right;
+            top: 40%;
+            position: absolute;
+            left: 58%;
+        }
+        .f_widget_1 h2{
+            display: flex;
+        }
+        .footer_logo{
+            width: 29%;
+        }
+        .footer_logo img{
+            width:100%;
+        }
+        .footer_logo_text{
+            font-size: 3em;
+            margin: auto;
+            background: linear-gradient(to right, #9249e2 0%, #2575fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .paypent_list a img{
+            display: inline;
+        }
+        .top_certified a img{
+            display: inline;
+        }
+        .img-fluid{
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .navbar .navbar-nav > li.nav-item > a:hover{
+            color: #0aa8e4;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Pre-loader -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader_inner"></div>
+        <div class="loader_inner"></div>
+    </div>
+</div>
+
+<!-- mobile menu icon -->
+<a class="burger_icon d-md-flex d-lg-none navbar-toggler" data-toggle="collapse" data-target="#mega_menu">
+    <div class="stick stick_1"></div>
+    <div class="stick stick_2"></div>
+    <div class="stick stick_3"></div>
+</a>
+
+<!-- offcanvas overlay -->
+<div class="offcanvas_overlay"></div>
+
+<!-- offcanvas menu -->
+<div class="offcanvas_menu">
+    <a href="index.html" class="logo"><img src="/home/img/logo_3.png" alt="logo"></a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium veritatis voluptatem illum ipsum odit!</p>
+    <ul class="social_link">
+        <li><a href="#"><i class="ti-facebook"></i></a></li>
+        <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+        <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+        <li><a href="#"><i class="ti-pinterest"></i></a></li>
+    </ul>
+    <h5>Get In Tuch:</h5>
+    <div class="contact_form">
+        <form>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <input type="text" class="form-control" id="inputfirstname3" placeholder="Name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <textarea rows="3" class="form-control" id="inputmessage" placeholder="Message" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="boxed_btn">Submit</button>
+        </form>
+    </div>
+    <img src="/home/img/mobileno.png" alt="call" class="mobileno">
+</div>
+
+<!--Modal For Search -->
+<div class="search_bar">
+    <div class="search_body">
+        <form action="#">
+            <input type="text" placeholder="Enter your text"> <button><i class="ti-search"></i></button>
+        </form>
+    </div>
+</div>
+
+<!-- Start Header Section -->
+<header class="header_wrap_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="mega_nav navbar navbar-expand-lg d-flex justify-content-between p-0">
+                    <a class="navbar-brand" href="/"><img src="{$sbase.logo}" class="img-fluid" alt="Ahope logo_4"></a>
+                    <div class="p-lg-0 nav_wrapper">
+                        <ul class="navbar-nav m-auto collapse navbar-collapse" id="mega_menu" >
+                            <li class="nav-item home_drop">
+                                <a class="nav-link collapsed hcollapse"  href="/" >首页</a>
+
+                            </li>
+                            <li class="nav-item hosting_drop">
+                                <a class="nav-link collapsed hcollapse" href="{:Url('/comhome/functionshow/shared_hosting')}">产品价格</a>
+                                <div  class="hid">
+                                    <div class="mega_hosting_details">
+                                        <ul class="mega_hosting_list">
+                                            <!--<li><a href="{:Url('/comhome/functionshow/shared_hosting')}" >产品报价</a></li>
+                                            <li><a href="vps_hosting.html" >VPS Hosting</a></li>
+                                            <li><a href="dadicated_hosting.html" >Dedicated Hosting</a></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{:Url('Comhome/News/index')}">最新动态</a>
+                            </li>
+                            <li class="nav-item page_drop">
+                                <a class="nav-link collapsed hcollapse"  href="#mega_page_details" data-toggle="collapse">功能展示</a>
+                                <div class="mega_page_details hid" id="mega_page_details">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-4 d-lg-block d-none">
+                                                <div id="mega_page_slider" class="carousel slide" data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        {foreach $list as $k => $v}
+                                                        <div class="carousel-item {if $k === 0} active {/if}">
+                                                            <a href="{:Url('/comhome/functionshow/show')}?id={$v.id}"><img class="d-block w-100" src="{$v.funcimg}" alt="First slide"> </a>
+                                                        </div>
+                                                        {/foreach}
+
+                                                    </div>
+                                                    <a class="carousel-control-prev" href="#mega_page_slider" role="button" data-slide="prev">
+                                                        <i class="ti-angle-left"></i>
+                                                    </a>
+                                                    <a class="carousel-control-next" href="#mega_page_slider" role="button" data-slide="next">
+                                                        <i class="ti-angle-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-12">
+                                                {if $list}
+                                                <ul class="mega_page_list">
+                                                    {foreach  $list as $item}
+                                                    {if $item.id < 10}
+                                                    <li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+                                                    {/if}
+                                                    {/foreach}
+
+                                                </ul>
+                                                {/if}
+                                            </div>
+                                            <div class="col-lg-2 col-12">
+                                                {if $list}
+                                                <ul class="mega_page_list">
+                                                    {foreach  $list as $item}
+                                                    {if $item.id < 16 && $item.id > 10 }
+                                                    <li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}>{$item.title}</a></li>
+													{/if}
+													{/foreach}
+
+												</ul>
+												{/if}
+											</div>
+											<div class="col-lg-2 col-12">
+                                                        {if $list}
+                                                        <ul class="mega_page_list">
+                                                            {foreach  $list as $item}
+                                                            {if $item.id < 22 && $item.id > 16 }
+                                                            <li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+                                                            {/if}
+                                                            {/foreach}
+
+                                                        </ul>
+                                                        {/if}
+                                            </div>
+                                            <div class="col-lg-2 col-12">
+                                                {if $list}
+                                                <ul class="mega_page_list">
+                                                    {foreach  $list as $item}
+                                                    {if $item.id < 28 && $item.id > 22 }
+                                                    <li><a href="{:Url('/comhome/functionshow/show')}?id={$item.id}">{$item.title}</a></li>
+                                                    {/if}
+                                                    {/foreach}
+
+                                                </ul>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{:Url('Comhome/About/index')}">关于我们</a>
+                            </li>
+                            <li class="nav-item blog_drop">
+                                <a class="nav-link collapsed hcollapse" href="{:Url('Comhome/Cases/index')}" >案例演示</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"  href="/index/login/index.html">登录</a>
+                            </li>
+                            {if $register_flag == 1}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{:Url('Index/Register/index')}">注册</a>
+                            </li>
+                            {/if}
+                            <li class="nav_right nav-item">
+                                <a href="#" class="search_icon"><i class="ti-search search_icon"></i></a>
+                            </li>
+                            <li class="nav_right nav-item d-none d-lg-block">
+                                <a href="#" class="offcanvas"><i class="ti-align-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header Section -->
+
+<!-- Start Hero Section-->
+<section class="hero_area_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="hero_content_wrapper">
+                    <div class="hero_content text-center">
+                        <h2>百搜云端小程序系统</h2>
+                        <h3>We are selling best hosting service, The WHMCS Lagom theme installation service is performed Thanks to regular theme updates, you will stay up to date with we are selling special domain name.</h3>
+                        <div class="domain_form_5">
+                            <form action="#">
+
+                                </ol>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- End Hero Section -->
+
+<!-- Start Feature Section -->
+<section class="feature_area_5">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="single_feature_item_5">
+                    <div class="feature_icon d-flex align-items-center justify-content-center">
+                        <img src="/home/img/feature/51.png" alt="feature image">
+                    </div>
+                    <h3>开源系统无加密</h3>
+                    <p>更好的二次开发无压力，语言简单很容易读懂.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="single_feature_item_5 green_bg">
+                    <div class="feature_icon d-flex align-items-center justify-content-center">
+                        <img src="/home/img/feature/52.png" alt="feature image">
+                    </div>
+                    <h3>系统安全无漏洞</h3>
+                    <p>经过多方位检测整个系统的漏洞检测，使用更安全.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="single_feature_item_5 red_bg">
+                    <div class="feature_icon d-flex align-items-center justify-content-center">
+                        <img src="/home/img/feature/53.png" alt="feature image">
+                    </div>
+                    <h3>轻量系统文件</h3>
+                    <p>配置四G.4核心即可快速使用飞一般的感觉.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="single_feature_item_5 blue_bg">
+                    <div class="feature_icon d-flex align-items-center justify-content-center">
+                        <img src="/home/img/feature/54.png" alt="feature image">
+                    </div>
+                    <h3>Thinkphp框架</h3>
+                    <p>系统基于Thinkphp框架搭建，完美结合.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Feature Section -->
+
+<!-- Start Counter Section -->
+<div class="counter_section_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-6">
+                <div class="single_counter_2">
+                    <div class="counter_img d-flex justify-content-center align-items-center">
+                        <img src="/home/img/counter/shield.png" alt="shield">
+                    </div>
+                    <p>安全升级</p>
+                    <h4><span class="counter">100</span>%安全快速不丢文件</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="single_counter_2">
+                    <div class="counter_img d-flex justify-content-center align-items-center">
+                        <img src="/home/img/counter/award.png" alt="award">
+                    </div>
+                    <p>完美体验</p>
+                    <h4><span class="counter">21</span>用户体验度高</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="single_counter_2">
+                    <div class="counter_img d-flex justify-content-center align-items-center">
+                        <img src="/home/img/counter/support.png" alt="support">
+                    </div>
+                    <p>售后服务</p>
+                    <h4><span class="counter">98</span>% 一对一售后</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="single_counter_2">
+                    <div class="counter_img d-flex justify-content-center align-items-center">
+                        <img src="/home/img/counter/uptime.png" alt="uttime">
+                    </div>
+                    <p>极速搭建</p>
+                    <h4>宝塔轻量搭建快速 <span class="counter">100</span>%</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Counter Section -->
+
+<!-- Start Promo Content Area  -->
+<section class="promo_content_area_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="left_side">
+                    <div class="promo_content_5">
+                        <div class="box_wrapper">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <!-- promo video area -->
+                            <div class="overlay1">
+                                <video id="video1" controls autoplay >
+                                    <source src="http://themevaly.com/video/001.mp4" type="video/mp4">
+                                    Your browser does not support HTML5 video.
+                                </video>
+                            </div>
+                            <div class="button-container d-flex justify-content-center align-items-center">
+                                <button class="play_btn_pluse video_button " >
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 d-flex  justify-content-center align-items-center">
+                <div class="right_side">
+                    <h2>Something About Us</h2>
+                    <p>Lorem ipsum dolor sit amec nsecetur adipisicing elit, sed do eiusmi cidnt ut labore lor sit amec Lorem ipsum dolor sit amec nsecetur adipisicing elit, sed do eiusmi cidnt ut labore lor sit amec</p>
+                    <a href="#" class="boxed_btn"><span>Learn more</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Promo Content Area  -->
+
+<!-- Start Offer Section -->
+<section class="service_carousel_area_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="section_title_main_4 text-center">
+                    <h2>功能演示</h2>
+                    <h3>强大的功能，满足不同客户营销需求 </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="swiper-container service_carousel">
+                <div class="swiper-wrapper">
+                    {if $list}
+                    {foreach  $list as $item}
+                    <div class="swiper-slide">
+                        <div class="single_service_item_5">
+                            <h3>{$item.title}</h3>
+                            <p style="height: 53px; overflow:hidden;">{$item.descs}</p>
+                            <ul class="service_list">
+                                <li><i class="ti-check"></i>Free Website Builder</li>
+                                <li><i class="ti-check"></i>Free Domain Registration</li>
+                                <li><i class="ti-check"></i>24/7 Quality Support</li>
+                            </ul>
+                            <a href="{:Url('/comhome/functionshow/show')}?id={$item.id}"  class="boxed_btn"><span>查看</span><i class="ti-angle-double-right"></i></a>
+                            <div class="solution_single_div1 iconfont {$item.icon}"></div>
+                        </div>
+                    </div>
+                    {/foreach}
+                    {/if}
+
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5 colored_bg">-->
+                    <!--							<h3>Wordpress Packege</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Money Back Guarentee</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/2.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5">-->
+                    <!--							<h3>SSD Server</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Free Domain Registration</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/1.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5 colored_bg">-->
+                    <!--							<h3>Wordpress Packege</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Money Back Guarentee</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/2.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5 colored_bg">-->
+                    <!--							<h3>Wordpress Packege</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Money Back Guarentee</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/2.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5 colored_bg">-->
+                    <!--							<h3>Wordpress Packege</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Money Back Guarentee</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/2.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5 colored_bg">-->
+                    <!--							<h3>Wordpress Packege</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Money Back Guarentee</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/2.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                    <!--					<div class="swiper-slide">-->
+                    <!--						<div class="single_service_item_5 colored_bg">-->
+                    <!--							<h3>Wordpress Packege</h3>-->
+                    <!--							<p>We have many server stetion all over the world, thats why we can provide smooth hosting service, We have </p>-->
+                    <!--							<ul class="service_list">-->
+                    <!--								<li><i class="ti-check"></i>Free Website Builder</li>-->
+                    <!--								<li><i class="ti-check"></i>Money Back Guarentee</li>-->
+                    <!--								<li><i class="ti-check"></i>24/7 Quality Support</li>-->
+                    <!--							</ul>-->
+                    <!--							<a href="#" class="boxed_btn"><span>Get It!</span><i class="ti-angle-double-right"></i></a>-->
+                    <!--							<img src="/home/img/offers/2.png" alt="offers">-->
+                    <!--						</div>-->
+                    <!--					</div>-->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Offer Section -->
+
+<!-- Start client_and_testimonial combind section -->
+<section class="client_and_testimonial">
+    <div class="container">
+        <!-- Start Client Section -->
+        <div class="row  justify-content-center">
+            <div class="col-md-10 offset-md-1">
+                <div class="client_area_4 swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="wrapper">
+                                <div class="client_img d-flex justify-content-center align-items-center">
+                                    <a href="#"><img src="/home/img/clients/1.png" alt=" client image"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper">
+                                <div class="client_img d-flex justify-content-center align-items-center">
+                                    <a href="#"><img src="/home/img/clients/2.png" alt=" client image"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper">
+                                <div class="client_img d-flex justify-content-center align-items-center">
+                                    <a href="#"><img src="/home/img/clients/3.png" alt=" client image"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper">
+                                <div class="client_img d-flex justify-content-center align-items-center">
+                                    <a href="#"><img src="/home/img/clients/4.png" alt=" client image"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper">
+                                <div class="client_img d-flex justify-content-center align-items-center">
+                                    <a href="#"><img src="/home/img/clients/5.png" alt=" client image"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wrapper">
+                                <div class="client_img d-flex justify-content-center align-items-center">
+                                    <a href="#"><img src="/home/img/clients/6.png" alt=" client image"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Client Section -->
+
+        <div class="row">
+            <!-- Start testimonial Section -->
+            <div class="testimonial_area_4 swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="single_testionial">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="author">
+                                        <img src="/home/img/testimonial/1.png" alt="avater">
+                                        <div class="author_info"> <h4>Pagla Husting<span>CEO at Tiger blam</span></h4></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-9">
+                                    <div class="content">
+                                        <i  class="ti-quote-left"></i>
+                                        <p>We are selling best hosting service, The WHMCS Lagom theme installation service is performed Thanks to regular theme updates, you will stay up to date with we are selling special domain name. We are selling best hosting service, The WHMCS Lagom theme installation service is performed Thanks to regular theme </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single_testionial">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="author">
+                                        <img src="/home/img/testimonial/2.png" alt="avater">
+                                        <div class="author_info"> <h4>Pagla Husting<span>CEO at Tiger blam</span></h4></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-9">
+                                    <div class="content">
+                                        <i  class="ti-quote-left"></i>
+                                        <p>We are selling best hosting service, The WHMCS Lagom theme installation service is performed Thanks to regular theme updates, you will stay up to date with we are selling special domain name. We are selling best hosting service, The WHMCS Lagom theme installation service is performed Thanks to regular theme</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single_testionial">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-4 col-lg-3">
+                                    <div class="author">
+                                        <img src="/home/img/testimonial/1.png" alt="avater">
+                                        <div class="author_info"> <h4>Pagla Husting<span>CEO at Tiger blam</span></h4></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-9">
+                                    <div class="content">
+                                        <i  class="ti-quote-left"></i>
+                                        <p>We are selling best hosting service, you will stay up to date with we are selling special domain name. We are selling best hosting service, The WHMCS Lagom theme installation service is performed Thanks to regular theme </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"><img src="/home/img/testimonial/right_arrow.png" alt="arrow"></div>
+                <div class="swiper-button-prev"><img src="/home/img/testimonial/left_arrow.png" alt="arrow"></div>
+            </div>
+        </div>
+        <!-- End testimonial Section -->
+    </div>
+</section>
+<!-- End client_and_testimonial combind section -->
+
+<!-- Start About Section -->
+<section class="about_section">
+    <div class="container">
+        <div class="row single_about align-items-center">
+            <div class="col-md-6">
+                <div class="about_img d-flex justify-content-center">
+                    <img src="/home/img/about/about_1.png" alt="about">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about_info">
+                    <h3>Something About Us</h3>
+                    <p>Lorem ipsum dolor sit amec nsecetur adipisicing elit, sed do eiusmi cidnt ut labore lor sit amec Lorem ipsum dolor sit amec nsecetur</p>
+                    <ul class="service_list">
+                        <li><i class="ti-check"></i>No Extra Charge For Renew</li>
+                        <li><i class="ti-check"></i>24/7 Customer Support</li>
+                        <li><i class="ti-check"></i>Full Virus Protection</li>
+                    </ul>
+                    <a class="boxed_btn"><span>Learn More</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row single_about align-items-center">
+            <div class="col-md-6 order-2">
+                <div class="about_info">
+                    <h3>Something About Us</h3>
+                    <p>Lorem ipsum dolor sit amec nsecetur adipisicing elit, sed do eiusmi cidnt ut labore lor sit amec Lorem ipsum dolor sit amec nsecetur</p>
+                    <ul class="service_list">
+                        <li><i class="ti-check"></i>No Extra Charge For Renew</li>
+                        <li><i class="ti-check"></i>24/7 Customer Support</li>
+                        <li><i class="ti-check"></i>Full Virus Protection</li>
+                    </ul>
+                    <a class="boxed_btn"><span>Learn More</span></a>
+                </div>
+            </div>
+            <div class="col-md-6 order-1 order-md-3">
+                <div class="about_img d-flex justify-content-center">
+                    <img src="/home/img/about/about_12.png" alt="about">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Section -->
+
+<!-- Start Call To Action Area 4-->
+<section class="call_to_action_area_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 text-center">
+                <div class="">
+                    <h4>Are you looking for best hosting?</h4>
+                    <h3>Get Ready for Started Today</h3>
+                    <p>If you want to Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut If you want to Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut If you want to Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut If you want to </p>
+                    <a href="#" class="boxed_btn"><span>Free Trail</span></a>
+                    <a href="#" class="boxed_btn alt"><span>Buy Hosting</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Call To Action Area 4-->
+
+<!-- Start Packege-Pricing Section -->
+<section class="packege_pricing_area_5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="section_title_main_4 text-center">
+                    <h2>Best package</h2>
+                    <h3>Lorem ipsum dolor sit amec nsecetur adipisicing elit, sed do eiusmi cidnt ut labore lor sit amec Lorem ipsum dolor sit amec nsecetur </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4 col-lg-3 offset-lg-0 ">
+                <div class="pricing_tabling d-flex flex-column justify-content-center align-items-center">
+                    <div class="select_month_wrapper">
+                        <input type="text" id="chose_plan" readonly>
+                        <span class="arrow" ></span>
+                        <span class="split" ></span>
+                        <ol class="option_list">
+                            <li value="1" id="firstItem_plan">Monthly Plan</li>
+                            <li value="2">Yearly Plan</li>
+                        </ol>
+                    </div>
+                    <h3>Pricing Package</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container tab_wrapper">
+        <div class="row tab_1">
+            <div class="col-sm-12 col-md-4 col-lg-3 d-none d-lg-block">
+                <div class="single_pakege_5 item_list">
+                    <div class="pricing_top">
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li>Storage</li>
+                        <li>Bandwith</li>
+                        <li>VPSt</li>
+                        <li>SSL</li>
+                        <li>24/7 Live Support</li>
+                        <li>Domain</li>
+                        <li>Free Domain</li>
+                        <li>Database</li>
+                        <li>cPanel</li>
+                        <li>CLI & API</li>
+                        <li>DNS</li>
+                    </ul>
+                    <div class="pricing_footer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="single_pakege_5 regular">
+                    <div class="pricing_top d-flex justify-content-center flex-column align-items-center">
+                        <p class="plan_titel">授权加密</p>
+                        <h2 class="price">v5.0.01版本</h2>
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li><span class="d-inline-block d-md-block d-lg-none">Storage</span>1 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Bandwith</span>10 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">VPS</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">SSL</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">24/7 Live Support</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Domain</span> 5 Domain</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Free Domain</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Database</span>Single</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">cPanel</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">CLI & API</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">DNS</span><i class="ti-check unchecked"></i></li>
+                    </ul>
+                    <div class="pricing_footer">
+                        <a href="#" class="boxed_btn"><span>Get It</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="single_pakege_5 advance">
+                    <div class="pricing_top d-flex justify-content-center flex-column align-items-center">
+                        <p class="plan_titel">Regular</p>
+                        <h2 class="price">$37</h2>
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li><span class="d-inline-block d-md-block d-lg-none">Storage</span>5 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Bandwith</span>50 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">VPS</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">SSL</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">24/7 Live Support</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Domain</span> 10 Domain</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Free Domain</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Database</span>Unlimited</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">cPanel</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">CLI & API</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">DNS</span><i class="ti-check"></i></li>
+                    </ul>
+                    <div class="pricing_footer">
+                        <a href="#" class="boxed_btn"><span>Get It</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="single_pakege_5 pro">
+                    <div class="pricing_top d-flex justify-content-center flex-column align-items-center">
+                        <p class="plan_titel">Regular</p>
+                        <h2 class="price">$47</h2>
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li><span class="d-inline-block d-md-block d-lg-none">Storage</span>15 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Bandwith</span>120 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">VPS</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">SSL</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">24/7 Live Support</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Domain</span>Unlimited</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Free Domain</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Database</span>Unlimited</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">cPanel</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">CLI & API</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">DNS</span><i class="ti-check"></i></li>
+                    </ul>
+                    <div class="pricing_footer">
+                        <a href="#" class="boxed_btn"><span>Get It</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row tab_2">
+            <div class="col-sm-12 col-md-4 col-lg-3 d-none d-lg-block">
+                <div class="single_pakege_5 item_list">
+                    <div class="pricing_top">
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li>Storage</li>
+                        <li>Bandwith</li>
+                        <li>VPSt</li>
+                        <li>SSL</li>
+                        <li>24/7 Live Support</li>
+                        <li>Domain</li>
+                        <li>Free Domain</li>
+                        <li>Database</li>
+                        <li>cPanel</li>
+                        <li>CLI & API</li>
+                        <li>DNS</li>
+                    </ul>
+                    <div class="pricing_footer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="single_pakege_5 regular">
+                    <div class="pricing_top d-flex justify-content-center flex-column align-items-center">
+                        <p class="plan_titel">Regular</p>
+                        <h2 class="price">$55</h2>
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li><span class="d-inline-block d-md-block d-lg-none">Storage</span>1 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Bandwith</span>10 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">VPS</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">SSL</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">24/7 Live Support</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Domain</span> 5 Domain</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Free Domain</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Database</span>Single</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">cPanel</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">CLI & API</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">DNS</span><i class="ti-check unchecked"></i></li>
+                    </ul>
+                    <div class="pricing_footer">
+                        <a href="#" class="boxed_btn"><span>Get It</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="single_pakege_5 advance">
+                    <div class="pricing_top d-flex justify-content-center flex-column align-items-center">
+                        <p class="plan_titel">Regular</p>
+                        <h2 class="price">$75</h2>
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li><span class="d-inline-block d-md-block d-lg-none">Storage</span>5 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Bandwith</span>50 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">VPS</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">SSL</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">24/7 Live Support</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Domain</span> 10 Domain</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Free Domain</span><i class="ti-check unchecked"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Database</span>Unlimited</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">cPanel</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">CLI & API</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">DNS</span><i class="ti-check"></i></li>
+                    </ul>
+                    <div class="pricing_footer">
+                        <a href="#" class="boxed_btn"><span>Get It</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="single_pakege_5 pro">
+                    <div class="pricing_top d-flex justify-content-center flex-column align-items-center">
+                        <p class="plan_titel">Regular</p>
+                        <h2 class="price">$97</h2>
+                    </div>
+                    <ul class="pakege_service_list">
+                        <li><span class="d-inline-block d-md-block d-lg-none">Storage</span>15 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Bandwith</span>120 GB</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">VPS</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">SSL</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">24/7 Live Support</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Domain</span>Unlimited</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Free Domain</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">Database</span>Unlimited</li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">cPanel</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">CLI & API</span><i class="ti-check"></i></li>
+                        <li><span class="d-inline-block d-md-block d-lg-none">DNS</span><i class="ti-check"></i></li>
+                    </ul>
+                    <div class="pricing_footer">
+                        <a href="#" class="boxed_btn"><span>Get It</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End packege-Pricing Section -->
+
+
+<!-- Start Blog Section -->
+<section class="blog_area_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="section_title_main_4 text-center">
+                    <h2>Recent Blog</h2>
+                    <h3>Lorem ipsum dolor sit amec nsecetur adipisicing elit, sed do eiusmi cidnt ut labore lor sit amec Lorem ipsum dolor sit amec nsecetur </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single_blog_item_3">
+                    <div class="blog_img">
+                        <img src="/home/img/blog/21.png" alt="blog img">
+                    </div>
+                    <a class="blog_info" href="#">
+                        <p class="meta_date">16 Dec</p>
+                        <h2>Enjoy New SSD Hosting Offer with....!</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single_blog_item_3">
+                    <div class="blog_img">
+                        <img src="/home/img/blog/22.png" alt="blog img">
+                    </div>
+                    <a class="blog_info" href="#">
+                        <p class="meta_date">Apr 23</p>
+                        <h2>Enjoy New SSD Hosting Offer with....!</h2>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single_blog_item_3">
+                    <div class="blog_img">
+                        <img src="/home/img/blog/21.png" alt="blog img">
+                    </div>
+                    <a class="blog_info" href="#">
+                        <p class="meta_date">24 Jan</p>
+                        <h2>Enjoy New SSD Hosting Offer with....!</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog Section -->
+
+<!-- Start Footer Section -->
+<footer class="simple_clean_5">
+    <div class="container">
+        <div class="footer_top">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="f_widget_1">
+                        <h2><a href="#" class="footer_logo"><img src="{$sbase.logo}" alt="Logo"></a></h2>
+                        <p class="footer_text">We are absolute kopa sa company, if you have any doute please samne is ese kotha bol, pagla molom lagaibo.</p>
+                        <ul class="social_link">
+                            <li><a href="#"><i class="ti-facebook"></i></a></li>
+                            <li><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+                            <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                            <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="f_widget_2">
+                        <h3>服务</h3>
+                        <ul>
+                            <li><a href="#">微信小程序</a></li>
+                            <li><a href="#">百度小程序</a></li>
+                            <li><a href="#">qq小程序</a></li>
+                            <li><a href="#">字节跳动小程序</a></li>
+                            <li><a href="#">移动h5</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="f_widget_2">
+                        <h3>产品特点</h3>
+                        <ul>
+                            <li><a href="/comhome/functionshow/show.html?id=8">可拖拽DIY</a></li>
+                            <li><a href="/comhome/functionshow/show.html?id=7">多门店系统</a></li>
+                            <li><a href="#">可扩展强</a></li>
+                            <li><a href="#">小程序直播</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="f_widget_3">
+                        <h3>行业解决方案</h3>
+                        <ul>
+                            <li><a href="/comhome/solution/show.html?id=2">智慧餐饮</a></li>
+                            <li><a href="/comhome/solution/show.html?id=7">智慧家装</a></li>
+                            <li><a href="/comhome/solution/show.html?id=3">智慧商城</a></li>
+                            <li><a href="/comhome/solution/show.html?id=8">智慧教育</a></li>
+                        </ul>
+                        <ul>
+                            <li>  <a href="/comhome/solution/show.html?id=6">智慧休娱</a></li>
+                            <li><a href="/comhome/solution/show.html?id=4">智慧美业</a></li>
+                            <li> <a href="/comhome/solution/show.html?id=9">婚纱摄影</a></li>
+                            <li><a href="/comhome/solution/show.html?id=5">智慧旅游</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="f_widget_4">
+                        <h3>支持</h3>
+                        <ul>
+                            <li><a href="{:Url('Comhome/about/index')}">公司介绍</a></li>
+                            <img src="{$sbase.ewm}" style="width: 109px">
+                            <div>扫一扫关注我们</div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="scrolltop"> <i class="ti-angle-up"></i></div>
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-md-start justify-content-center">
+                    <div class="paypent_list">
+                        <h3>We Accept</h3>
+                        <div>
+                            <a href="#"><img src="/home/img/payment/1.png" alt="payment"></a>
+                            <a href="#"><img src="/home/img/payment/2.png" alt="payment"></a>
+                            <a href="#"><img src="/home/img/payment/3.png" alt="payment"></a>
+                            <a href="#"><img src="/home/img/payment/4.png" alt="payment"></a>
+                            <a href="#"><img src="/home/img/payment/5.png" alt="payment"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="copy_right_text">
+                        <p class="bottom2_p">{$sbase.name}&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$sbase.copyright}</p>
+                    </div>
+                </div>
+                <div class="col-md-4  d-flex justify-content-md-end justify-content-center">
+                    <div class="top_certified">
+                        <h3>Trusted By</h3>
+                        <div>
+                            <a href="#"><img src="/home/img/trusted/1.png" alt="trusted client"></a>
+                            <a href="#"><img src="/home/img/trusted/2.png" alt="trusted client"></a>
+                            <a href="#"><img src="/home/img/trusted/3.png" alt="trusted client"></a>
+                            <a href="#"><img src="/home/img/trusted/4.png" alt="trusted client"></a>
+                            <a href="#"><img src="/home/img/trusted/5.png" alt="trusted client"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+
+
+<!--jQuery JS-->
+<script src="/home/js/jquery-3.3.1.min.js"></script>
+<script src="/home/js/popper.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- isotope -->
+<script src="/home/js/isotope.pkgd.min.js"></script>
+<!-- colorbox popup -->
+<script src="/home/js/jquery.colorbox-min.js"></script>
+<!-- Swiper Slider -->
+<script src="/home/js/swiper.min.js"></script>
+<!-- waypoints  -->
+<script src="/home/js/jquery.waypoints.min.js"></script>
+<!-- Counterup  -->
+<script src="/home/js/jquery.counterup.min.js"></script>
+<!-- Custom js -->
+<script src="/home/js/main.js"></script>
+
+</body>
+</html>
